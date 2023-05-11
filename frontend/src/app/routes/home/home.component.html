@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 d-flex flex-column align-items-center">
+      <div class=>
+        <ng-container class="btn-group-vertical" *ngFor="let video of videos | keyvalue let i as index" >
+          <button type="button" class="btn btn-primary mb-1 w-100" (click)="assignvideo(i)">{{video.value.name}}</button>
+         </ng-container>
+      </div>
+
+    </div>
+    <div class="col-md-6" >
+
+      <div>
+        <video class="object-fit-cover" autoplay controls id="myVideo" #myVideo [src]="videourl" type="video/mp4">
+          <source [src]="videourl" type="video/ogg">
+        Your browser does not support the video tag.
+        </video>
+        <div>
+          <div>
+
+    <button class="btn btn-primary mb-3" (click)="bookmark()" >+BookMarks</button>
+          </div>
+          <div>
+            <button class="btn btn-info mx-2" (click)="seekToTime(83)">01:23</button>
+            <button class="btn btn-info mx-2" (click)="seekToTime(123)">02:03</button>
+          </div>
+          <div>
+            <button class="btn btn-info m-2" (click)="seekToTime(105)">01:45</button>
+            <button class="btn btn-info m-2"(click)="seekToTime(203)">03:23</button>
+          </div>
+          <div class="timeline">
+            <button class="btn btn-info m-2" (click)="seekToTime(114)">01:54</button>
+            <button class="btn btn-info m-2"(click)="seekToTime(252)">04:12</button>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div >
+      <div class="bg-secondary p-4 mt-3 rounded-3">
+        <h2 class="text-center">Postdata</h2>
+        <form (ngSubmit)="post()" [formGroup]="postForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">name of video</label>
+              <input type="text" class="form-control"   formControlName="name" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="url" class="form-label">url of video</label>
+              <input type="text" class="form-control" formControlName="url" id="url" required>
+            </div>
+            <button type="submit" class="btn btn-primary">postdata</button>
+          </form>
+    </div>
+  </div>
+

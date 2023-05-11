@@ -1,0 +1,23 @@
+<div class="center d-flex rounded-3">
+  <div class="bg-secondary p-4 rounded-3">
+    <form (ngSubmit)="signup()" [formGroup]="signupForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">UserName</label>
+          <input type="text" class="form-control" formControlName="username" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text"  class="form-control" formControlName="name" id="name">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+        </div>
+        <button type="submit" class="btn btn-light mx-3" >Signup</button>
+        <p class="text-center  mt-5 mb-0">Have already an account? <a routerLink=""
+          class="fw-bold text-body"><u>Login here</u></a></p>
+      </form>
+  </div>
+</div>
+
+

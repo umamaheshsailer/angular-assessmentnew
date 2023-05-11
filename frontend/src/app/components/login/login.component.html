@@ -1,0 +1,17 @@
+<div class="center d-flex ">
+  <div class="bg-secondary p-4 rounded-3">
+    <form (ngSubmit)="Login()" [formGroup]="loginForm">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">UserName</label>
+          <input type="text" class="form-control"   formControlName="username" id="exampleInputEmail1" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-light mx-3" routerLink="/signup">Signup</button>
+      </form>
+  </div>
+</div>
+
